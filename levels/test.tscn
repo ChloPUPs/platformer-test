@@ -21,3 +21,39 @@ shape = SubResource("RectangleShape2D_lkjt4")
 self_modulate = Color(0.79455096, 0.121461876, 0, 1)
 scale = Vector2(11.984375, 1)
 texture = ExtResource("2_lkjt4")
+
+[node name="Ground2" type="StaticBody2D" parent="." unique_id=1616802789]
+position = Vector2(1345, -23)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2" unique_id=1981955586]
+shape = SubResource("RectangleShape2D_lkjt4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground2" unique_id=1955411532]
+self_modulate = Color(0.79455096, 0.121461876, 0, 1)
+scale = Vector2(11.984375, 1)
+texture = ExtResource("2_lkjt4")
+
+[node name="Ground3" type="StaticBody2D" parent="." unique_id=2020480627]
+position = Vector2(-252, -333)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3" unique_id=618236933]
+shape = SubResource("RectangleShape2D_lkjt4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground3" unique_id=1988017156]
+self_modulate = Color(0.79455096, 0.121461876, 0, 1)
+scale = Vector2(11.984375, 1)
+texture = ExtResource("2_lkjt4")
+
+[node name="Ground4" type="StaticBody2D" parent="." unique_id=529918164]
+position = Vector2(-1641, -607)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4" unique_id=1729274400]
+shape = SubResource("RectangleShape2D_lkjt4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground4" unique_id=1361079795]
+self_modulate = Color(0.79455096, 0.121461876, 0, 1)
+scale = Vector2(11.984375, 1)
+texture = ExtResource("2_lkjt4")

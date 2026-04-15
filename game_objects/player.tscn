@@ -10,7 +10,7 @@ size = Vector2(125, 124)
 script = ExtResource("1_a4hy7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1313807686]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.7, 0.7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=274457687]
 position = Vector2(-0.5, 0)
