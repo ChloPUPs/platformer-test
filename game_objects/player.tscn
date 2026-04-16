@@ -9,6 +9,12 @@ size = Vector2(125, 124)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4hy7"]
 size = Vector2(116, 110)
 
+[sub_resource type="LabelSettings" id="LabelSettings_a4hy7"]
+font_size = 64
+
+[sub_resource type="Theme" id="Theme_a4hy7"]
+default_font_size = 64
+
 [node name="Player" type="CharacterBody2D" unique_id=802514167]
 script = ExtResource("1_a4hy7")
 
@@ -27,3 +33,60 @@ shape = SubResource("RectangleShape2D_rpe43")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2141644501]
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_a4hy7")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=529565773]
+
+[node name="GameplayUI" type="Control" parent="UI" unique_id=193651952]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/GameplayUI" unique_id=1374347325]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -313.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+
+[node name="Label" type="Label" parent="UI/GameplayUI/MarginContainer" unique_id=881304559]
+layout_mode = 2
+text = "Test Label"
+label_settings = SubResource("LabelSettings_a4hy7")
+horizontal_alignment = 2
+
+[node name="DeathUI" type="Control" parent="UI" unique_id=173988658]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/DeathUI" unique_id=1071931054]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -98.0
+offset_right = 237.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a4hy7")
+
+[node name="Button" type="Button" parent="UI/DeathUI/VBoxContainer" unique_id=1629030687]
+layout_mode = 2
+text = "Respawn"
+
+[node name="Button2" type="Button" parent="UI/DeathUI/VBoxContainer" unique_id=1204961380]
+layout_mode = 2
+text = "Quit"
