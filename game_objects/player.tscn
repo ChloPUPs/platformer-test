@@ -83,10 +83,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_a4hy7")
 
-[node name="Button" type="Button" parent="UI/DeathUI/VBoxContainer" unique_id=1629030687]
+[node name="RespawnBtn" type="Button" parent="UI/DeathUI/VBoxContainer" unique_id=1629030687]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Respawn"
 
-[node name="Button2" type="Button" parent="UI/DeathUI/VBoxContainer" unique_id=1204961380]
+[node name="QuitBtn" type="Button" parent="UI/DeathUI/VBoxContainer" unique_id=1204961380]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="UI/DeathUI/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

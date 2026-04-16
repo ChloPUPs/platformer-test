@@ -43,3 +43,6 @@ func die() -> void:
 	print("You died I think why are you still moving")
 	%DeathUI.visible = true
 	%GameplayUI.visible = false
+
+func _on_quit_btn_pressed() -> void:
+	get_tree().quit(0)
