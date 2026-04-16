@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > TERMINAL_VELOCITY:
 			velocity.y = TERMINAL_VELOCITY
 	
+	# jump jump jump suhvfjukiobsejh kjals
 	if is_on_floor() and airjumps_left != MAX_AIRJUMP_AMOUNT:
 		airjumps_left = MAX_AIRJUMP_AMOUNT
 	
