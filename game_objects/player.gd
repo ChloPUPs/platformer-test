@@ -13,8 +13,17 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fullscreen"):
+		var window_mode := DisplayServer.window_get_mode()
+		var is_window: bool = window_mode != DisplayServer.WINDOW_MODE_FULLSCREEN
+		DisplayServer.window_set_mode(
+			DisplayServer.WINDOW_MODE_FULLSCREEN
+			if is_window
+			else DisplayServer.WINDOW_MODE_WINDOWED
+		)
 	if Game.game_state == Game.GameState.DEATH:
 		return
+	# player is not dead past this point
 	if event.is_action_pressed("jump") and airjumps_left > 0:
 		velocity.y = -JUMP_STRENGTH
 		airjumps_left -= 1
