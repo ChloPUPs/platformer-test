@@ -93,4 +93,5 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
 
+[connection signal="pressed" from="UI/DeathUI/VBoxContainer/RespawnBtn" to="." method="_on_respawn_btn_pressed"]
 [connection signal="pressed" from="UI/DeathUI/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

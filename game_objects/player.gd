@@ -9,6 +9,9 @@ var airjumps_left: int = MAX_AIRJUMP_AMOUNT
 var current_gravity_mult: float = GRAVITY_STATES["fall"]
 var elapsed_since_movement: Dictionary[String, float] = {}
 
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
 func _input(event: InputEvent) -> void:
 	if Game.game_state == Game.GameState.DEATH:
 		return
@@ -50,6 +53,11 @@ func die() -> void:
 	Game.game_state = Game.GameState.DEATH
 	%DeathUI.visible = true
 	%GameplayUI.visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_quit_btn_pressed() -> void:
 	get_tree().quit(0)
+
+func _on_respawn_btn_pressed() -> void:
+	Game.game_state = Game.GameState.GAMEPLAY
+	get_tree().call_deferred("reload_current_scene")
