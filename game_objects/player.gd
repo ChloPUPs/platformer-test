@@ -10,6 +10,8 @@ var current_gravity_mult: float = GRAVITY_STATES["fall"]
 var elapsed_since_movement: Dictionary[String, float] = {}
 
 func _input(event: InputEvent) -> void:
+	if Game.game_state == Game.GameState.DEATH:
+		return
 	if event.is_action_pressed("jump") and airjumps_left > 0:
 		velocity.y = -JUMP_STRENGTH
 		airjumps_left -= 1
@@ -20,10 +22,14 @@ func _input(event: InputEvent) -> void:
 		elapsed_since_movement["left"] = 0.0
 
 func _process(delta: float) -> void:
+	if Game.game_state == Game.GameState.DEATH:
+		return
 	for key: String in elapsed_since_movement.keys():
 		elapsed_since_movement[key] += delta
 
 func _physics_process(delta: float) -> void:
+	if Game.game_state == Game.GameState.DEATH:
+		return
 	var direction: float = Input.get_axis("move_left", "move_right")
 	velocity.x = direction * SPEED
 	if !is_on_floor():
@@ -41,6 +47,7 @@ func _apply_gravity(delta: float) -> void:
 
 func die() -> void:
 	print("You died I think why are you still moving")
+	Game.game_state = Game.GameState.DEATH
 	%DeathUI.visible = true
 	%GameplayUI.visible = false
 
