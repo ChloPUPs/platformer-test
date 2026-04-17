@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b2oolj5ier2j3"]
 
-[ext_resource type="PackedScene" uid="uid://daxn4kp4vq3dd" path="res://game_objects/player.tscn" id="1_72lju"]
 [ext_resource type="Texture2D" uid="uid://bt2fwdh2rxyqj" path="res://icon.svg" id="2_lkjt4"]
 [ext_resource type="PackedScene" uid="uid://df5fye8swhh0" path="res://game_objects/spike.tscn" id="3_ny0t1"]
 
@@ -8,8 +7,6 @@
 size = Vector2(1530, 124)
 
 [node name="Test" type="Node2D" unique_id=1510412267]
-
-[node name="Player" parent="." unique_id=802514167 instance=ExtResource("1_72lju")]
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1279548637]
 position = Vector2(-1, 257)
