@@ -46,7 +46,7 @@ func _apply_gravity(delta: float) -> void:
 		velocity.y = TERMINAL_VELOCITY
 
 func die() -> void:
-	print("You died I think why are you still moving")
+	print("haha you don't move anymore goober so gooberish you are")
 	Game.game_state = Game.GameState.DEATH
 	%DeathUI.visible = true
 	%GameplayUI.visible = false
